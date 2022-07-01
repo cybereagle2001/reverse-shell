@@ -5,7 +5,7 @@ import os
 import subprocess
 import sys
 
-server_host ='127.0.0.1' #sys.argv[1]
+server_host = sys.argv[1]
 server_port = 443
 data_size = 1024 * 128
 SEPARATOR = "<sep>"
