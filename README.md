@@ -35,7 +35,7 @@ data_size = 1024 * 128
 SEPARATOR = "<sep>"
 cyber = socket.socket()
 ```
-As you can understanf from the variable names the server_host is the IP address of our server/attacker_machine we used the IP 0.0.0.0 in order to make the server reachable through all the IPv4 addresses of the server. For the server_port I used the port 443. We can use any port we want but the port 80 and 443 are widely used to bypass firewalls. data_size is the maximum ammoun of data that the client can send to the server and versversa.
+As you can understand from the variable names the server_host is the IP address of our server/attacker_machine we used the IP 0.0.0.0 in order to make the server reachable through all the IPv4 addresses of the server. For the server_port I used the port 443. We can use any port we want but the port 80 and 443 are widely used to bypass firewalls. data_size is the maximum ammoun of data that the client can send to the server and viceversa.
 SPERATOR is the seperation between the data sent or received.
 
 then I created a socket and I called it cyber this is what we are going to use in the second part of our code.
