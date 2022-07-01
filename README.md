@@ -123,3 +123,6 @@ while True:
     victim.send(message.encode())
 victim.close()
 ```
+
+author: cybereagle2001
+used refrences : pythoncode - acunetix - docs.python - stackoverflow -wikipedia 
