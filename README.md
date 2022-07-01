@@ -74,7 +74,7 @@ while True:
     results,cmd = output.split(SEPARATOR)
     print(results)
 ```
-basicly what we are doing is that we are verifying if the command which is the input of the hacker is not blank if it's the case then we will encode the command and send it to the victim. If hte command in lower case is exit then we will break out that means we will shutdown the server and then the communication with the client will die. If the process is executed correctly then we can receaive data from the victim and output. This is what the last 3 lines of code are doing on our server code.
+basically what we are doing is that we are verifying if the command which is the input of the hacker is not blank if it's the case then we will encode the command and send it to the victim. If the command in lower case is exit then we will break out that means we will shutdown the server and then the communication with the client will die. If the process is executed correctly then we can receaive data from the victim and output. This is what the last 3 lines of code are doing on our server code.
 
 ## payload.py
 The payload is the portion of the malware which performs malicious action. In our case the payload is the script that will be running on the victims device. 
